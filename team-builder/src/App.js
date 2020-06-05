@@ -3,6 +3,7 @@ import logo from './logo.svg';
 
 import Header from './components/Header/Header';
 import Form from './components/Form/Form';
+import MemberList from './components/Member/MemberList';
 
 import { teamMembers } from './data';
 
@@ -13,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <Header teams={teams} />
-      <Form />
+      <MemberList memberList={members} />
     </div>
   );
 }

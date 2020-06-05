@@ -53,28 +53,6 @@ table {
 }
 
 /* Colors */
-.header-nav {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  grid-template-rows: 140px 100px;
-  grid-gap: 1.2rem;
-  background-color: #007cdd;
-  height: 80px;
-}
-.header-nav h1 {
-  color: #ebebeb;
-  margin-top: 20%;
-}
-.header-nav div {
-  background: #59dfd8;
-  box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-  margin-top: 30px;
-  height: 100px;
-  width: 100px;
-  z-index: 20;
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -122,6 +100,33 @@ code {
   to {
     transform: rotate(360deg);
   }
+}
+.header-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-rows: 140px 100px;
+  grid-gap: 1.2rem;
+  background-color: #007cdd;
+  height: 80px;
+}
+.header-nav h1 {
+  color: #ebebeb;
+  margin-top: 20%;
+}
+.header-nav div {
+  background: #59dfd8;
+  box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  margin-top: 30px;
+  height: 100px;
+  width: 100px;
+  z-index: 20;
+}
+
+.members {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  margin: 20px 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

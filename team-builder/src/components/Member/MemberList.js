@@ -1,10 +1,13 @@
 import React from 'react';
 
-const MemberList = (props) => {
+import MemberCard from './MemberCard';
+
+const MemberList = ({memberList}) => {
     return (
         <div className="members">
-            {props.memberList.map((member) => {
+            {memberList.map((member) => {
                 // render member cards here
+                return <MemberCard key={member.id} member={member} />
             })}
         </div>
     );
