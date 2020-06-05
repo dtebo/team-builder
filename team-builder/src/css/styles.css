@@ -111,7 +111,7 @@ code {
 }
 .header-nav h1 {
   color: #ebebeb;
-  margin-top: 20%;
+  padding: 10px;
 }
 .header-nav div {
   background: #59dfd8;
@@ -126,7 +126,32 @@ code {
 .members {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
   margin: 20px 0;
+}
+.members .member-card {
+  background-color: #c86414;
+}
+
+.form-wrapper form {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 40%;
+  width: 70%;
+  margin: 20px;
+}
+.form-wrapper form label {
+  margin-bottom: -12px;
+  width: 200px;
+  height: 100px;
+  text-align: left;
+}
+.form-wrapper form input, .form-wrapper form select {
+  margin-top: 20px;
+}
+.form-wrapper form button {
+  width: 20%;
+  height: 30px;
 }
 
 /*# sourceMappingURL=styles.css.map */
