@@ -63,12 +63,15 @@ table {
 }
 .header-nav h1 {
   color: #ebebeb;
+  margin-top: 20%;
 }
 .header-nav div {
-  background: teal;
+  background: #59dfd8;
   box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 50%;
-  margin-top: 20px;
+  margin-top: 30px;
+  height: 100px;
+  width: 100px;
   z-index: 20;
 }
 
