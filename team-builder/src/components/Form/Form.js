@@ -3,7 +3,12 @@ import React from 'react';
 const Form = () => {
     return(
         <div className='form-wrapper'>
-            <h2>Form Goes Here...</h2>
+            <form>
+                <label htmlFor='firstName'>
+                    First Name
+                    <input type='text' placeholder />
+                </label>
+            </form>
         </div>
     );
 };

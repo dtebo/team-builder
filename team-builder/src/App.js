@@ -15,6 +15,7 @@ function App() {
     <div className="App">
       <Header teams={teams} />
       <MemberList memberList={members} />
+      <Form />
     </div>
   );
 }
