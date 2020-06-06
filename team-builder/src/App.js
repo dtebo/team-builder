@@ -16,15 +16,19 @@ function App() {
     setMembers([...members, {...member, id: Date.now()}]);
   };
 
-  const editMember = (memberToEdit) => {
+  const editMember = (member) => {
+    setMembers([...members, {...member}]);
+  };
+
+  const getMemberToEdit = (memberToEdit) => {
     setMemberToEdit(memberToEdit);
   };
 
   return (
     <div className="App">
       <Header teams={teams} />
-      <MemberList memberList={members} editMember={editMember} />
-      <Form addNewMember={addNewMember} memberToEdit={memberToEdit} />
+      <MemberList memberList={members} getMemberToEdit={getMemberToEdit} />
+      <Form addNewMember={addNewMember} memberToEdit={memberToEdit} editMember={editMember} />
     </div>
   );
 }

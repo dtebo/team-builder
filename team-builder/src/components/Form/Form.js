@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 const Form = (props) => {
     const [member, setMember] = useState({firstName: '', lastName: '', email: '', role: ''});
+    const [isEditing, setIsEditing] = useState(false);
 
     const handleChanges = (event) => {
         console.log(event.target.value);
@@ -11,9 +12,23 @@ const Form = (props) => {
 
     const submitForm = (event) => {
         event.preventDefault();
-        props.addNewMember(member);
+
+        if(isEditing){
+            props.editMember(member);
+        }
+        else{
+            props.addNewMember(props.memberToEdit);
+        }
+        
         setMember({firstName: '', lastName: '', email: '', role: ''});
     };
+
+    useEffect(() => {
+        if(props.memberToEdit){
+            setIsEditing(true);
+            setMember(props.memberToEdit);
+        }
+    }, [props.memberToEdit]);
 
     return(
         <div className='form-wrapper'>

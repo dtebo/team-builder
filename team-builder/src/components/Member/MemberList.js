@@ -7,7 +7,7 @@ const MemberList = (props) => {
         <div className="members">
             {props.memberList.map((member) => {
                 // render member cards here
-                return <MemberCard key={member.id} member={member} editMember={props.editMember} />
+                return <MemberCard key={member.id} member={member} getMemberToEdit={props.getMemberToEdit} />
             })}
         </div>
     );

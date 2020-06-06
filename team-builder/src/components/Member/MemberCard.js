@@ -10,7 +10,7 @@ const MemberCard = (props) => {
                 <p>{`Email: ${props.member.email}`}</p>
                 <p>{`Role: ${props.member.role}`}</p>
             </section>
-            <button onClick={(event) => props.editMember(props.member)}>Edit</button>
+            <button onClick={(event) => props.getMemberToEdit(props.member)}>Edit</button>
         </div>
     );
 };
