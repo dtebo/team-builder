@@ -12,7 +12,7 @@ function App() {
   const [members, setMembers] = useState(teamMembers);
 
   const addNewMember = (member) => {
-    setMembers([...members, member]);
+    setMembers([...members, {...member, id: Date.now()}]);
   };
 
   return (

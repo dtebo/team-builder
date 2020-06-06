@@ -32,7 +32,7 @@ const Form = (props) => {
                 </label>
                 <label htmlFor='role'>
                     Role
-                    <select name='role' id='role' value={member.role}>
+                    <select name='role' id='role' onChange={handleChanges} value={member.role}>
                         <option value='-'>Select a role</option>
                         <option value='Frontend Engineer'>Frontend Engineer</option>
                         <option value='Backend Engineer'>Backend Engineer</option>
