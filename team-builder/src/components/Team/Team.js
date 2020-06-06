@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 
+import MemberList from '../Member/MemberList';
+import Form from '../Form/Form';
+
 const Team = ({teams}) => {
     const params = useParams();
 
@@ -10,7 +13,8 @@ const Team = ({teams}) => {
 
     useEffect(() => {
         setTeam(currentTeam);
-    }, [id]);
+        setMembers(currentTeam.members);
+    }, []);
 
 
     const [team, setTeam] = useState();
@@ -23,10 +27,13 @@ const Team = ({teams}) => {
     };
 
     const editMember = (member) => {
+        // Grab the index of the member to update
         let idx = members.findIndex(mbr => mbr.id === member.id);
 
+        // Grab a copy of the members array. We don't want to edit state directly!
         let updatedArr = [...members];
 
+        // Grab the member to update based on the index
         let item = {...updatedArr[idx], ...member};
 
         updatedArr[idx] = item;
@@ -35,12 +42,15 @@ const Team = ({teams}) => {
     };
 
     const getMemberToEdit = (memberToEdit) => {
+        // Get the member that needs edited
         setMemberToEdit(memberToEdit);
     };
 
     return (
         <div className="team">
-            <p>{currentTeam.name}</p>
+            <h1>{currentTeam.name}</h1>
+            <MemberList memberList={currentTeam.members} getMemberToEdit={getMemberToEdit} />
+            <Form addNewMember={addNewMember} memberToEdit={memberToEdit} editMember={editMember} />
         </div>
     );
 };

@@ -13,11 +13,9 @@ function App() {
   return (
     <div className="App">
       <Header teams={teams} />
-      {/* <Form addNewMember={addNewMember} memberToEdit={memberToEdit} editMember={editMember} /> */}
       <Switch>
         <Route path="/teams/:id">
           <Team teams={teams} />
-          {/* <MemberList memberList={members} getMemberToEdit={getMemberToEdit} /> */}
         </Route>
         <Route path="/" component={App} />
       </Switch>
