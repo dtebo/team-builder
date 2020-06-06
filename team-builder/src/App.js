@@ -11,11 +11,15 @@ function App() {
   const [teams, setTeams] = useState([{name: 'team1'}]);
   const [members, setMembers] = useState(teamMembers);
 
+  const addNewMember = (member) => {
+    setMembers([...members, member]);
+  };
+
   return (
     <div className="App">
       <Header teams={teams} />
       <MemberList memberList={members} />
-      <Form />
+      <Form addNewMember={addNewMember} />
     </div>
   );
 }

@@ -9,9 +9,15 @@ const Form = (props) => {
         setMember({...member, [event.target.name]: event.target.value});
     };
 
+    const submitForm = (event) => {
+        event.preventDefault();
+        props.addNewMember(member);
+        setMember({firstName: '', lastName: '', email: '', role: ''});
+    };
+
     return(
         <div className='form-wrapper'>
-            <form>
+            <form onSubmit={submitForm}>
                 <label htmlFor='firstName'>
                     First Name 
                     <input type='text' name='firstName' id='firstName' placeholder='Enter First Name' onChange={handleChanges} value={member.firstName} />
