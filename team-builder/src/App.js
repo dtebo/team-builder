@@ -5,11 +5,11 @@ import Header from './components/Header/Header';
 import Form from './components/Form/Form';
 import MemberList from './components/Member/MemberList';
 
-import { teamMembers } from './data';
+import { devTeams } from './data';
 
 function App() {
-  const [teams, setTeams] = useState([{name: 'FakeCorp'}]);
-  const [members, setMembers] = useState(teamMembers);
+  const [teams, setTeams] = useState([...devTeams]);
+  const [members, setMembers] = useState();
   const [memberToEdit, setMemberToEdit] = useState();
 
   const addNewMember = (member) => {
