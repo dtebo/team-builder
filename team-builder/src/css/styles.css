@@ -155,9 +155,35 @@ code {
 .form-wrapper form input, .form-wrapper form select {
   margin-top: 20px;
 }
-.form-wrapper form button {
-  width: 20%;
+.form-wrapper form input {
+  border: none;
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
+  transition: all 0.2s ease-in;
+}
+.form-wrapper form input:focus {
+  outline: none;
+}
+.form-wrapper form .button-wrapper {
+  background: linear-gradient(45deg, #2390e9, #6223f4, #ec58c7);
+  border-radius: 20px;
+  border: 1px solid gray;
+  width: 15%;
+  transition: all 0.2s ease-in;
+  position: relative;
+  bottom: 20px;
+}
+.form-wrapper form .button-wrapper button {
+  background: none;
+  background-clip: padding-box;
+  border: none;
+  outline: none;
+  color: #efefef;
+  font: bold 10px "segoe", verdana;
   height: 30px;
+}
+.form-wrapper form .button-wrapper button:hover .button-wrapper {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=styles.css.map */

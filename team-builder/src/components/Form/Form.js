@@ -21,7 +21,9 @@ const Form = () => {
                         <option value='pm'>Project Manager</option>
                     </select>
                 </label>
-                <button type='submit'>Add Member</button>
+                <div className="button-wrapper">
+                    <button type='submit'>Add Member</button>
+                </div>
             </form>
         </div>
     );
