@@ -5,6 +5,8 @@ const Form = (props) => {
 
     const handleChanges = (event) => {
         console.log(event.target.value);
+
+        setMember({...member, [event.target.name]: event.target.value});
     };
 
     return(
@@ -12,19 +14,19 @@ const Form = (props) => {
             <form>
                 <label htmlFor='firstName'>
                     First Name 
-                    <input type='text' id='firstName' placeholder='Enter First Name' onChange={handleChanges} value={member.firstName} />
+                    <input type='text' name='firstName' id='firstName' placeholder='Enter First Name' onChange={handleChanges} value={member.firstName} />
                 </label>
                 <label htmlFor='lastName'>
                     Last Name
-                    <input type='text' id='lastName' placeholder='Enter Last Name' onChange={handleChanges} value={member.lastName} />
+                    <input type='text' name='lastName' id='lastName' placeholder='Enter Last Name' onChange={handleChanges} value={member.lastName} />
                 </label>
                 <label htmlFor='email'>
                     Email
-                    <input type='text' id='email' placeholder='Enter Last Name' onChange={handleChanges} value={member.email} />
+                    <input type='text' name='email' id='email' placeholder='Enter Last Name' onChange={handleChanges} value={member.email} />
                 </label>
                 <label htmlFor='role'>
                     Role
-                    <select id='role' value={member.role}>
+                    <select name='role' id='role' value={member.role}>
                         <option value='-'>Select a role</option>
                         <option value='Frontend Engineer'>Frontend Engineer</option>
                         <option value='Backend Engineer'>Backend Engineer</option>
