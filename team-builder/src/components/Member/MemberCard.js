@@ -7,6 +7,7 @@ const MemberCard = ({member}) => {
                 <h2>{`${member.firstName} ${member.lastName}`}</h2>
             </section>
             <section className="card-body">
+                <p>{`Email: ${member.email}`}</p>
                 <p>{`Role: ${member.role}`}</p>
             </section>
         </div>
