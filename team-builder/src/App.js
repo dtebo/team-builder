@@ -17,7 +17,16 @@ function App() {
   };
 
   const editMember = (member) => {
-    setMembers([...members, {...member}]);
+    let idx = members.findIndex(mbr => mbr.id === member.id);
+
+    let updatedArr = [...members];
+    console.log(members);
+
+    let item = {...updatedArr[idx], ...member};
+
+    updatedArr[idx] = item;
+
+    setMembers(updatedArr);
   };
 
   const getMemberToEdit = (memberToEdit) => {
