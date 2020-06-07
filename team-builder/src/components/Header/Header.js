@@ -8,7 +8,9 @@ const Header = (props) => {
             {props.teams.map((team) => {
                 return (
                     <NavLink to={`/teams/${team.id}`}>
-                        <div>{team.name}</div>
+                        <div>
+                            <p>{team.name}</p>
+                        </div>
                     </NavLink>
                 );
             })}

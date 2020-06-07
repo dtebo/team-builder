@@ -6,24 +6,34 @@
     margin: 20px;
 
     label{
-        margin-bottom: -12px;
+        // margin-bottom: -12px;
         width: 200px;
-        height: 100px;
+        height: 80px;
         text-align: left;
-    }
 
-    input, select{
-        margin-top: 20px;
-    }
+        p{
+            position: relative;
+            top: 0;
+        }
 
-    input{
-        border: none;
-        border-bottom: 1px solid gray;
-        padding-bottom: 10px;
-        transition: all .2s ease-in;
-        
-        &:focus{
-            outline: none;
+        input, select{
+            margin-top: 20px;
+        }
+    
+        input{
+            border: none;
+            border-bottom: 1px solid gray;
+            padding-bottom: 10px;
+            transition: all .2s ease-in;
+            
+            &:focus{
+                outline: none;
+            }
+        }
+    
+        select{
+            margin-left: 20px;
+            margin-top: 20px;
         }
     }
 

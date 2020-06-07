@@ -81,22 +81,22 @@ const Form = (props) => {
         <div className='form-wrapper'>
             <form onSubmit={submitForm}>
                 <label htmlFor='firstName'>
-                    First Name 
+                    <p>First Name</p>
                     <input type='text' name='firstName' id='firstName' placeholder='Enter First Name' onChange={handleChanges} value={member.firstName} />
                     {errors.firstName.length > 0 ? (<p className="error">{errors.firstName}</p>) : null}
                 </label>
                 <label htmlFor='lastName'>
-                    Last Name
+                    <p>Last Name</p>
                     <input type='text' name='lastName' id='lastName' placeholder='Enter Last Name' onChange={handleChanges} value={member.lastName} />
                     {errors.lastName.length > 0 ? (<p className="error">{errors.lastName}</p>) : null}
                 </label>
                 <label htmlFor='email'>
-                    Email
+                    <p>Email</p>
                     <input type='text' name='email' id='email' placeholder='Enter Last Name' onChange={handleChanges} value={member.email} />
                     {errors.email.length > 0 ? (<p className="error">{errors.email}</p>) : null}
                 </label>
                 <label htmlFor='role'>
-                    Role
+                    <p>Role</p>
                     <select name='role' id='role' onChange={handleChanges} value={member.role}>
                         <option value='-'>Select a role</option>
                         <option value='Frontend Engineer'>Frontend Engineer</option>

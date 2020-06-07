@@ -20,7 +20,7 @@ const Team = (props) => {
     const [team, setTeam] = useState();
     const [members, setMembers] = useState();
     const [memberToEdit, setMemberToEdit] = useState();
-
+    const [showForm, setShowForm] = useState(false);
 
     const addNewMember = (member) => {
         setMembers([...members, {...member, id: Date.now()}]);
@@ -46,6 +46,9 @@ const Team = (props) => {
     };
 
     const getMemberToEdit = (memberToEdit) => {
+        // Show the form
+        setShowForm(true);
+        
         // Get the member that needs edited
         setMemberToEdit(memberToEdit);
     };
@@ -64,7 +67,7 @@ const Team = (props) => {
         <div className="team">
             <h1>{team.name}</h1>
             <MemberList memberList={team.members} getMemberToEdit={getMemberToEdit} />
-            <Form addNewMember={addNewMember} memberToEdit={memberToEdit} editMember={editMember} />
+            {showForm ? <Form addNewMember={addNewMember} memberToEdit={memberToEdit} editMember={editMember} /> : null}
         </div>
     );
 };
