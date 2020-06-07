@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Header from './components/Header/Header';
-import Form from './components/Form/Form';
 import Team from './components/Team/Team';
 
 import { devTeams } from './data';
