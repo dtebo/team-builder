@@ -52,6 +52,7 @@ const Form = (props) => {
                         <option value='Frontend Engineer'>Frontend Engineer</option>
                         <option value='Backend Engineer'>Backend Engineer</option>
                         <option value='Project Manager'>Project Manager</option>
+                        <option value='Designer'>Designer</option>
                     </select>
                 </label>
                 <div className="button-wrapper">
