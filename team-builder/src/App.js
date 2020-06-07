@@ -16,7 +16,7 @@ function App() {
         <Route path="/teams/:id">
           <Team teams={teams} />
         </Route>
-        <Route path="/" component={App} />
+        {/* <Route path="/" component={App} /> */}
       </Switch>
     </div>
   );

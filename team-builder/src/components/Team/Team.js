@@ -20,7 +20,6 @@ const Team = (props) => {
     const [team, setTeam] = useState();
     const [members, setMembers] = useState();
     const [memberToEdit, setMemberToEdit] = useState();
-    const [showForm, setShowForm] = useState(false);
 
     const addNewMember = (member) => {
         setMembers([...members, {...member, id: Date.now()}]);
