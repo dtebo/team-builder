@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 
 import MemberList from '../Member/MemberList';
 import Form from '../Form/Form';
+import MyModal from '../Modal/Modal';
 
 const Team = (props) => {
     const params = useParams();
@@ -20,6 +21,9 @@ const Team = (props) => {
     const [team, setTeam] = useState();
     const [members, setMembers] = useState();
     const [memberToEdit, setMemberToEdit] = useState();
+    const [modal, setModal] = useState(false);
+
+    const toggle = () => setModal(!modal);
 
     const addNewMember = (member) => {
         setMembers([...members, {...member, id: Date.now()}]);
@@ -45,11 +49,10 @@ const Team = (props) => {
     };
 
     const getMemberToEdit = (memberToEdit) => {
-        // Show the form
-        setShowForm(true);
-        
         // Get the member that needs edited
         setMemberToEdit(memberToEdit);
+
+        setModal(true);
     };
 
     const updateTeam = (members) => {
@@ -66,7 +69,8 @@ const Team = (props) => {
         <div className="team">
             <h1>{team.name}</h1>
             <MemberList memberList={team.members} getMemberToEdit={getMemberToEdit} />
-            {showForm ? <Form addNewMember={addNewMember} memberToEdit={memberToEdit} editMember={editMember} /> : null}
+            <MyModal form={<Form addNewMember={addNewMember} memberToEdit={memberToEdit} editMember={editMember} />} modal={modal} toggle={toggle} />
+            {/* <Form addNewMember={addNewMember} memberToEdit={memberToEdit} editMember={editMember} /> */}
         </div>
     );
 };

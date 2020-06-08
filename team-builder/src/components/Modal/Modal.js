@@ -1,32 +1,34 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import {
     Modal,
     ModalBody,
     ModalHeader,
-    ModalFooter
+    ModalFooter,
+    Button
 } from 'reactstrap';
 
-const Modal = (props) => {
+const MyModal = (props) => {
     const {
         buttonLabel,
-        className
+        className,
+        form,
+        modal,
+        toggle
     } = props;
 
-    const [modal, setModal] = useState(false);
-
-    const toggle = () => setModal(!modal);
-
     return(
-        <Model isOpen={modal} toggle={toggle} className={className}>
+        <Modal isOpen={modal} toggle={toggle} className={className}>
             <ModalHeader toggle={toggle}>Add/Update Member</ModalHeader>
             <ModalBody>
-
+                {form}
             </ModalBody>
             <ModalFooter>
                 <Button color="primary" onClick={toggle}>Ok</Button>{' '}
                 <Button color="secondary" onClick={toggle}>Cancel</Button>
             </ModalFooter>
-        </Model>
+        </Modal>
     )
-}
+};
+
+export default MyModal;
