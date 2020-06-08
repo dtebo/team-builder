@@ -7,7 +7,7 @@ const Header = (props) => {
             <h1>Team Manager</h1>
             {props.teams.map((team) => {
                 return (
-                    <NavLink to={`/teams/${team.id}`}>
+                    <NavLink key={team.id} to={`/teams/${team.id}`}>
                         <div>
                             <p>{team.name}</p>
                         </div>

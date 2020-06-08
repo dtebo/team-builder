@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import Form from '../Form/Form';
 
 import {
     Modal,
@@ -9,19 +10,23 @@ import {
 } from 'reactstrap';
 
 const MyModal = (props) => {
+    
     const {
         buttonLabel,
         className,
-        form,
         modal,
-        toggle
+        toggle,
+        addNewMember,
+        memberToEdit,
+        editMember
     } = props;
 
+    
     return(
         <Modal isOpen={modal} toggle={toggle} className={className}>
             <ModalHeader toggle={toggle}>Add/Update Member</ModalHeader>
             <ModalBody>
-                {form}
+                <Form addNewMember={addNewMember} memberToEdit={memberToEdit} editMember={editMember} />
             </ModalBody>
             <ModalFooter>
                 <Button color="primary" onClick={toggle}>Ok</Button>{' '}

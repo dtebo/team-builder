@@ -12,7 +12,7 @@ const MemberCard = (props) => {
     if(!member) {
         // Display the add a member card
         return (
-            <div className="member-card add-member" onClick={() => showAddForm()}>
+            <div className="member-card add-member" onClick={showAddForm}>
                 <section className="card-header">
                     <h2>Add a new member</h2>
                 </section>

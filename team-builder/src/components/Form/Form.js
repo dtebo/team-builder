@@ -30,7 +30,6 @@ const Form = (props) => {
 
     const handleChanges = (event) => {
         event.persist();
-        console.log(event.target.value);
 
         Yup
             .reach(formSchema, event.target.name)
@@ -58,7 +57,7 @@ const Form = (props) => {
             props.editMember(member);
         }
         else{
-            props.addNewMember(props.memberToEdit);
+            props.addNewMember(member);
         }
         
         setMember({firstName: '', lastName: '', email: '', role: ''});

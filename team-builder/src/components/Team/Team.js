@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 
 import MemberList from '../Member/MemberList';
-import Form from '../Form/Form';
+// import Form from '../Form/Form';
 import MyModal from '../Modal/Modal';
 
 const Team = (props) => {
@@ -27,9 +27,18 @@ const Team = (props) => {
 
     const addNewMember = (member) => {
         setMembers([...members, {...member, id: Date.now()}]);
-        updateTeam(members);
-        props.getTeam(team);
+
+        // updateTeam(members);
+        
+        // props.getTeam(team);
     };
+
+    useEffect(() => {
+        if(members){
+            updateTeam(members);
+        }
+        
+    },[members])
 
     const editMember = (member) => {
         // Grab the index of the member to update
@@ -49,10 +58,10 @@ const Team = (props) => {
     };
 
     const getMemberToEdit = (memberToEdit) => {
+        setModal(true);
+        
         // Get the member that needs edited
         setMemberToEdit(memberToEdit);
-
-        setModal(true);
     };
 
     const updateTeam = (members) => {
@@ -73,7 +82,7 @@ const Team = (props) => {
         <div className="team">
             <h1>{team.name}</h1>
             <MemberList memberList={team.members} getMemberToEdit={getMemberToEdit} showAddForm={showAddForm} />
-            <MyModal form={<Form addNewMember={addNewMember} memberToEdit={memberToEdit} editMember={editMember} />} modal={modal} toggle={toggle} />
+            <MyModal addNewMember={addNewMember} memberToEdit={memberToEdit} editMember={editMember} modal={modal} toggle={toggle} />
             {/* <Form addNewMember={addNewMember} memberToEdit={memberToEdit} editMember={editMember} /> */}
         </div>
     );
