@@ -63,12 +63,16 @@ const Team = (props) => {
         setTeam(updatedTeam);
     };
 
+    const showAddForm = () => {
+        setModal(true);
+    }
+
     if(!team) return <h3>Loading...</h3>;
 
     return (
         <div className="team">
             <h1>{team.name}</h1>
-            <MemberList memberList={team.members} getMemberToEdit={getMemberToEdit} />
+            <MemberList memberList={team.members} getMemberToEdit={getMemberToEdit} showAddForm={showAddForm} />
             <MyModal form={<Form addNewMember={addNewMember} memberToEdit={memberToEdit} editMember={editMember} />} modal={modal} toggle={toggle} />
             {/* <Form addNewMember={addNewMember} memberToEdit={memberToEdit} editMember={editMember} /> */}
         </div>

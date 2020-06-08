@@ -147,6 +147,12 @@ code {
 .members .member-card .card-header {
   padding-bottom: 20px;
 }
+.members .add-member p {
+  font-size: 20px;
+}
+.members .add-member .card-body:hover {
+  color: white;
+}
 
 .form-wrapper form {
   display: flex;

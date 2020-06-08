@@ -1,18 +1,23 @@
 import React from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+
 const MemberCard = (props) => {
     const {
-        member
+        member,
+        showAddForm
     } = props;
     
     if(!member) {
+        // Display the add a member card
         return (
-            <div className="member-card">
+            <div className="member-card add-member" onClick={() => showAddForm()}>
                 <section className="card-header">
                     <h2>Add a new member</h2>
                 </section>
                 <section className="card-body">
-                    <p>+</p>
+                    <FontAwesomeIcon icon={faPlus} />
                 </section>
             </div>
         );
