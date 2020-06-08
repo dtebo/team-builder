@@ -9,6 +9,7 @@ const MemberList = (props) => {
                 // render member cards here
                 return <MemberCard key={member.id} member={member} getMemberToEdit={props.getMemberToEdit} />
             })}
+            <MemberCard key={'0000000000000'} />
         </div>
     );
 };
