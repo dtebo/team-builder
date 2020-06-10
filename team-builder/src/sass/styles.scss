@@ -1,0 +1,9 @@
+@use 'reset';
+@import 'global';
+@import 'mixins';
+@import '../index.scss';
+@import '../App.scss';
+@import '../components/Header/Header.scss';
+@import '../components/Member/Member.scss';
+@import '../components/Form/Form.scss';
+@import '../components/Team/Team.scss';

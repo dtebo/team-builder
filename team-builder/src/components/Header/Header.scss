@@ -1,0 +1,32 @@
+.header-nav{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-rows: 140px 100px;
+    grid-gap: 1.2rem;
+    background-color: $header-background;
+    height: 80px;
+    margin-bottom: 100px;
+
+    h1{
+        color: rgb(235, 235, 235);
+        padding: 10px;
+    }
+
+    a{
+        text-decoration: none;
+        div{
+            background: rgb(89, 223, 216);
+            box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            margin-top: 30px;
+            height: 100px;
+            width: 100px;
+            z-index: 20;
+    
+            p{
+                position: relative;
+                top: 40%;
+            }
+        }
+    }
+}
